@@ -2,6 +2,16 @@ FROM debian:sid
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="deluge-gtk-docker" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/vonProteus/deluge-gtk-docker" \
+      org.label-schema.version=$VERSION \
+      org.label-schema.schema-version="1.0"
+
 RUN useradd --create-home deluge && \
     mkdir -p /home/deluge/.config/deluge && \
     chown -R deluge:deluge /home/deluge/ && \

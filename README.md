@@ -11,5 +11,5 @@ docker run \
     --rm \
     -e DISPLAY=$X11_HOST:0 \
     -v $HOME/.config/deluge:/home/deluge/.config/deluge
-    <image_id>
+    vonproteus/deluge-gtk-docker
 ```
